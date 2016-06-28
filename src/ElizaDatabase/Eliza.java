@@ -46,6 +46,10 @@ public class Eliza {
 		}
 	}
 	
+	public static String makeReplacements(String str, Connection con) throws SQLException {
+		return("");	
+	}
+	
 	public static String getQualifier(String input, Set<String> qualifiers, 
 			Map<String, String> replacements) {
 		String[] words = null;
@@ -120,7 +124,8 @@ public class Eliza {
 					response = getRandomString(true, con);
 				} else {
 					response = getRandomString(false, con);
-					response = getQualifier(statement, qualifierSet, replacementMap);
+					//response = getQualifier(statement, qualifierSet, replacementMap);
+					response = makeReplacements(response, conn);
 				}
 				System.out.println(response);
 			}
